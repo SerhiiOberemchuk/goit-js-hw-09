@@ -22,10 +22,11 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     // console.log(selectedDates[0]);
-    const finishDate = selectedDates[0].getDate();
-    const currentDate = new Date().getDate();
+    const currentTime = new Date().getTime();
+    // const finishDate = selectedDates[0].getDate();
+    // const currentDate = new Date().getDate();
     const finishTime = selectedDates[0].getTime();
-    if (finishDate <= currentDate) {
+    if (finishTime <= currentTime) {
       Notiflix.Notify.failure('Please choose a date in the future');
     } else {
       btnStart.disabled = false;
